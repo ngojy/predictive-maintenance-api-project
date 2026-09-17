@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-def generate_data(n_samples: int = 10000, seed: int = 42) -> pd.DataFrame:
+def generate_dataset(n_samples: int = 10000, seed: int = 42) -> pd.DataFrame:
     rng = np.random.default_rng(seed)
 
     # machine operating baseline
@@ -52,6 +52,6 @@ def generate_data(n_samples: int = 10000, seed: int = 42) -> pd.DataFrame:
     return df
 
 if __name__ == "__main__":
-    df = generate_data()
+    df = generate_dataset()
     df.to_csv("data/sensor_data.csv", index=False)
     print(f"Generated {len(df)} rows, failure rate: {df['failure'].mean():.2%}")
